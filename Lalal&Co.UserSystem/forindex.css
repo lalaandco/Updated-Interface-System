@@ -7,15 +7,20 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #d4c4b0 0%, #e8ddd0 50%, #c9b8a8 100%); 
             min-height: 100vh;
             
         }
 
         .header {
+            position: fixed;         /* Keeps it at the top */
+            top: 0;                  /* Position from the top */
+            left: 0;
+            width: 100%;             /* Full width */
+            z-index: 1000;           /* Stays on top of other elements */
             background: linear-gradient(90deg, #d4c4b0 0%, #e8ddd0 25%, #f0e8dc 50%, #e8ddd0 75%, #d4c4b0 100%);
             padding: 0 40px;
-        }
+        }       
+
 
 
         .main-header {
@@ -285,3 +290,5 @@
             filter: blur(6px); /* slightly less blur for smaller viewports if desired */
         }
     }
+
+   

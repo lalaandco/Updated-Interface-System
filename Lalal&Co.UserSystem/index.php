@@ -9,7 +9,8 @@ session_start();
     <link rel="stylesheet" href="forindex.css">
     <title>La Gal & Co. Official Store</title>
 </head>
-<body>   
+<body>  
+    
     <section id= "mainheader-section">
         <header class="header">
         <div class="main-header">
@@ -24,10 +25,7 @@ session_start();
                 <a href="index.php"><img src="images/homepage_title.png" alt="Lalal & Co" class="logo-main" one rror="this.style.display='none'; this.nextElementSibling.style.display='block';"></a>
                 <div class="logo-placeholder logo-main-placeholder" style="display:none;">LALAL & CO.</div>
                 
-                <div class="official-store">
-                    <span>OFFICIAL</span>
-                    <span>STORE</span>
-                </div>
+
             </div>
             
             <div class="right-section">
@@ -86,7 +84,6 @@ session_start();
     </section>
 
 
-
     <section id="content-section">
         <div class="content">
             <?php
@@ -94,10 +91,16 @@ session_start();
             $page = $_GET['page'] ?? '';
             if ($page === 'login') {
                 include __DIR__ . '/login.php';
-            } else {
-                echo '<h1>Welcome to Lalal & Co. Official Store!</h1>';
-            }
+            } 
             ?>
+        </div>
+       
+    </section>
+
+    <section id="content-section">
+        <div class="content">
+            <h1>This is the product</h1> 
+            <button onclick="window.location.href='index.php'">Go</button>
         </div>
     </section>
 
