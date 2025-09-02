@@ -65,12 +65,15 @@
     <title>Log In and Register</title>
 </head>
 
-<body>
-    
-    
+<body> 
+    <div class="overlay">
+    </div>
     <div class="login-container">
         <div class="form-box <?= isActiveForm('login',$activeForm); ?>" id="login-form" >
             <form action="login_register.php" method="post">
+                <a href="index.php">
+                    < BACK TO LOGIN
+                </a>
                 <div class="logo">
                     <img src="images/loginLogo.png" alt="logo">
                 </div>
