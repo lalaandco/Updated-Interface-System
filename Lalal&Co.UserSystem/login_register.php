@@ -26,15 +26,14 @@
             $_SESSION['register_error'] = "Password must contain at least a number or symbol.";
             $_SESSION['active_form'] = "register"; 
             // leave clear_password = true (clear password input)
-            header("Location: login.php");
+            header("Location: index.php?page=login");
             exit();
         }
-
 
         if (!preg_match('/^[0-9]{11}$/', $contact_number)) {
             $_SESSION['register_error'] = "Contact number must be exactly 11 digits and contain only numbers.";
             $_SESSION['active_form'] = "register"; 
-            header("Location: login.php");
+            header("Location: index.php?page=login");
             exit();
         }
 
@@ -42,7 +41,7 @@
             $_SESSION['register_error'] = "Password must be at least 8 characters long.";
             $_SESSION['active_form'] = "register"; 
             // leave clear_password = true (clear password input)
-            header("Location: login.php");
+            header("Location: index.php?page=login");
             exit();
         }
 
@@ -53,11 +52,9 @@
             $_SESSION['register_error'] = "Please Complete The Credentials";
             $_SESSION['active_form'] = "register"; 
             // don't change clear_password (it will be false here because password passed validations above)
-            header("Location: login.php");
+            header("Location: index.php?page=login");
             exit();
         }
-
-        
         
         $password = password_hash($password_raw, PASSWORD_DEFAULT);
 
@@ -75,7 +72,7 @@
                 unset($_SESSION['old_inputs'], $_SESSION['clear_password']);
             }
         }
-        header("Location: login.php");
+        header("Location: index.php?page=login");
         exit();
     }
 
@@ -86,12 +83,11 @@
         if (empty($email) || empty($password)) {
             $_SESSION['login_error'] = "Please enter both email and password.";
             $_SESSION['active_form'] = "login"; 
-            header("Location: login.php");
+            header("Location: index.php?page=login");
             exit();
         }
 
         $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
-
 
         if($result->num_rows > 0){
             $user = $result->fetch_assoc();
@@ -101,19 +97,20 @@
                 $_SESSION["address"] = $user["address"];
                 $_SESSION["contact-number"] = $user["contact_number"];
 
-                header("Location: user_login.php");
+                // Redirect to main index page instead of user_login.php
+                header("Location: index.php");
                 exit();
             }
             else {
-            $_SESSION['active_form'] = "login"; 
-            $_SESSION['login_error'] = "Incorrect password.";
-            header("Location: login.php");
-            exit;
+                $_SESSION['active_form'] = "login"; 
+                $_SESSION['login_error'] = "Incorrect password.";
+                header("Location: index.php?page=login");
+                exit();
             }    
         }
         $_SESSION['active_form'] = "login"; 
         $_SESSION['login_error'] = "Email not found.";
-        header("Location: login.php");
+        header("Location: index.php?page=login");
         exit();
     }
 

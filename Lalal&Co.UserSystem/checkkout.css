@@ -1,0 +1,114 @@
+html,body {
+    margin: 0;
+    background: linear-gradient(135deg, #d4c4b0 0%, #e8ddd0 50%, #c9b8a8 100%);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #333;
+    overflow: auto; /* scrolling works */
+    scrollbar-width: none; /* for Firefox */
+    -ms-overflow-style: none; 
+    user-select: none;
+    overflow: hidden;
+
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* darkens the background */
+    z-index: 999; /* ensure it's above everything else */
+    
+}
+
+.delivery-address {
+    max-width: 80%;
+    margin: 100px auto;
+    background: linear-gradient(135deg, #d4c4b0 0%, #e8ddd0 50%, #c9b8a8 100%);
+    padding: 30px;
+    font-size: 50px ;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;         /* Keeps it at the top */
+    top: 10%;                  /* Position from the top */
+    width: 100%;  
+    height: 70%;           /* Full width */
+    z-index: 1000;           /* Stays on top of other elements */
+    left: 10%;
+}
+.login-prompt {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;         /* Keeps it at the top */
+    top: 15%;                  /* Position from the top */
+    left: 0;
+    width: 100%;             /* Full width */
+    z-index: 1000;           /* Stays on top of other elements */
+    left: 40%;
+
+}
+.delivery-address p{
+    position: relative;
+    font-size: 20px;
+    top: 10px;      
+}
+.delivery-address h4 {
+    position: relative;
+    font-size: 30px;
+    top: 25px;
+}
+.delivery-address h5 ul{
+    position: relative;
+    text-decoration: none;
+    list-style: none    ;
+    font-size: 20px;
+    top: 20px;
+    display: flex;    
+    gap: 50px;
+    justify-content: end;
+}
+#perfumes-name{
+    position: relative;
+    top: 20px;
+    left: 20%;
+    margin-top: 70px;
+}   
+#pqs ul{
+    position: relative ;
+    text-decoration: none;
+    list-style: none    ;
+    font-size: 20px;
+    display: flex;   
+    top: -5px; 
+    gap: 100px;
+    right: 70px;
+}
+#payment-method{
+    position: relative;
+    top: 20%;
+    left: 40%;
+    margin-top: 70px;
+    height: 500px;
+    width: 500px;
+    border: none;
+    padding:20px;
+}
+#po{
+    text-align: center;
+}
+.payment-text {
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+input[type="radio"] {
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
