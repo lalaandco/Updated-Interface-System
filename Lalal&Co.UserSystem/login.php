@@ -49,7 +49,6 @@
 
     }
 
-   
 ?>
 
 
@@ -71,15 +70,17 @@
     <div class="login-container">
         <div class="form-box <?= isActiveForm('login',$activeForm); ?>" id="login-form" >
             <form action="login_register.php" method="post">
-                <a href="index.php">
-                    < BACK TO LOGIN
-                </a>
+                <div class="back-button">
+                    <a href="index.php">
+                        <i class='bx bx-undo'></i>
+                    </a>
+                </div>    
                 <div class="logo">
                     <img src="images/loginLogo.png" alt="logo">
                 </div>
                     <h2>LOG IN</h2>
                     <?= showError($error['login']); ?>
-                    <input type="email" name="email" placeholder="Username"><br>
+                    <input type="email" name="email" placeholder="Email"><br>
                     <input type="password" name="password" placeholder="Password"><br>
                     <input type="submit" value="Log In" name="login"><br>
                     <h2 class="or"><span>OR</span></h2>
@@ -99,7 +100,7 @@
                 <input type="text" name="name" placeholder="Name" value="<?= htmlspecialchars($old['name'] ?? '') ?>"><br>
                 <input type="text" name="address" placeholder="Address" value="<?= htmlspecialchars($old['address'] ?? '') ?>"><br>
                 <input type="text" name="contact-number" placeholder="Contact Number" value="<?= htmlspecialchars($old['contact-number'] ?? '') ?>"><br>    
-                <input type="email" name="email" placeholder="Username" value="<?= htmlspecialchars($old['email'] ?? '') ?>"><br>
+                <input type="email" name="email" placeholder="Email" value="<?= htmlspecialchars($old['email'] ?? '') ?>"><br>
                 <input type="password" name="password" placeholder="Password" <?= ($clearPassword ? '' : '') ?> ><br>
                 <input type="submit" value="Register" name="register"><br>
 
