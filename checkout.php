@@ -1,8 +1,9 @@
 <?php  
 if (basename($_SERVER['PHP_SELF']) == 'checkout.php') {
-header("Location: index.php?page=cart");
-exit;
-}
+        header("Location: AddToCart.php?page=checkout");
+        exit;
+    }
+
 $isLoggedIn = isset($_SESSION["email"]);
 
 $userEmail = $_SESSION["email"] ?? '';
@@ -16,7 +17,7 @@ $userContact = $_SESSION["contact-number"] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHECKOUT</title>
-    <link rel="stylesheet" href="checkkout.css">
+    <link rel="stylesheet" href="checkout.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>

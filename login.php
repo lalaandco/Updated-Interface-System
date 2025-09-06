@@ -96,6 +96,11 @@
             <form action="login_register.php" method="post">
                 <?= showSuccess($success['register']); ?>
                 <?= showError($error['register']); ?>
+                <div class="back-button">
+                    <a href="index.php">
+                        <i class='bx bx-undo'></i>
+                    </a>
+                </div>  
                 <h2>Register</h2>
                 <input type="text" name="name" placeholder="Name" value="<?= htmlspecialchars($old['name'] ?? '') ?>"><br>
                 <input type="text" name="address" placeholder="Address" value="<?= htmlspecialchars($old['address'] ?? '') ?>"><br>
@@ -113,7 +118,7 @@
             </form>
         </div>
     </div>      
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
 

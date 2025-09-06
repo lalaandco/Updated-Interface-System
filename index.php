@@ -8,6 +8,8 @@ $page = $_GET['page'] ?? '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styleIndex.css">
     <?php if ($page === 'login'): ?>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -123,7 +125,7 @@ $page = $_GET['page'] ?? '';
                         </svg>
                     </div>
                     
-                    <a href="checkout.php">
+                    <a href="AddToCart.php">
                         <div class="icon cart-icon">
                             <svg viewBox="0 0 24 24">
                                 <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
@@ -135,7 +137,7 @@ $page = $_GET['page'] ?? '';
             </div>
         </header>
     </section>
-
+        
     <section id="hero">
         <div class="main-home">
             <div class="hero-image">
@@ -148,7 +150,8 @@ $page = $_GET['page'] ?? '';
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;completes
                 <br>YOU.</h1>
-                <a href="#products"><button class="button">SHOP NOW</button></a>
+                <a href="#product" target><button class="button">SHOP NOW</button></a>
+
             </div>
         </div>
     </section>
@@ -162,20 +165,163 @@ $page = $_GET['page'] ?? '';
                 include __DIR__ . '/login.php';
             } 
             elseif($page === 'cart') {
-                include __DIR__ . '/checkout.php';
+                include __DIR__ . '/AddToCart.php';
             }   
             ?>
         </div>
 
-        <section class="products">
-            <div class="products-grid">
-                <h2 id="products" class="section-title">Our Products</h2>
+        <section class="feature">
+    <div class="middle-text">
+        <h2>FEATURED PRODUCTS</h2>
+        <p>Discover our exclusive selection of perfumes, handpicked for you.</p>
+    </div>
+
+    <div class="feature-content">
+        <!-- Card 1 -->
+        <div class="row">
+            <div class="main-row">
+                <div class="row-text">
+                    <h6>Explore new Perfumes</h6>
+                    <div class="card-title">FOR HIM COLLECTIONS</div>
+                    <a href="productCategories.php" class="row-btn">Show me all</a>
+                </div>
+                <div class="row-img">
+                    <img src="images/ForHim.png" alt="perfume for him" class="img1">
+                </div>
             </div>
-                
-        </section>
+        </div>
 
+        <!-- Card 2 -->
+        <div class="row">
+            <div class="main-row">
+                <div class="row-text">
+                    <h6>Explore new Perfumes</h6>
+                    <div class="card-title">FOR HER COLLECTIONS</div>
+                    <a href="productCategories.php" class="row-btn">Show me all</a>
+                </div>
+                <div class="row-img">
+                    <img src="images/ForHer.png" alt="perfume for her" class="img1">
+                </div>
+            </div>
+        </div>
 
+        <!-- Card 3 -->
+        <div class="row">
+            <div class="main-row">
+                <div class="row-text">
+                    <h6>Explore new Perfumes</h6>
+                    <div class="card-title">OTHER COLLECTIONS</div>
+                    <a href="productCategories.php" class="row-btn">Show me all</a>
+                </div>
+                <div class="row-img">
+                    <img src="images/ForOthers.png" alt="perfume for others" class="img1">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
     
+    <section class="product" id="product">
+        <div class="middle-text">
+            <h2><span>Best Selling of the month</span></h2>
+        </div>
+
+        <div class="product-content">
+            <!-- Product 1 - Now fully clickable -->
+            <a href="buyProduct.php?id=1" class="product-link">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="images/ForHim.png">
+                    </div>
+                    <h3>Cnalb Tnom</h3>
+                    <div class="inbox">
+                        <span class="price">₱360.00</span>
+                    
+                        <button class="add-to-cart-btn" onclick="addToCart(event, 1)">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 2 - Now fully clickable -->
+            <a href="buyProduct.php?id=2" class="product-link">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="images/ForHer.png">
+                    </div>
+                    <h3>Lenahc Ecnahc</h3>
+                    <div class="inbox">
+                        <span class="price">₱480.00</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(event, 2)">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 3 - Now fully clickable -->
+            <a href="buyProduct.php?id=3" class="product-link">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="images/ForHim.png">
+                    </div>
+                    <h3>Deerc Sutneva</h3>
+                    <div class="inbox">
+                        <span class="price">₱360.00</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(event, 3)">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i> 
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 4 - Now fully clickable -->
+            <a href="buyProduct.php?id=4" class="product-link">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="images/ForHer.png">
+                    </div>
+                    <h3>Ecal Allinav</h3>
+                    <div class="inbox">
+                        <span class="price">₱460.00</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(event, 4)">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <?php if ($isLoggedIn): ?>
     <script>
         // Toggle dropdown when clicking user icon
@@ -194,5 +340,28 @@ $page = $_GET['page'] ?? '';
         }
     </script>
     <?php endif; ?>
+
+    <script>
+        // Add to cart functionality
+        function addToCart(event, productId) {
+            // Prevent the product link from being triggered
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Add your cart logic here
+            console.log('Adding product ' + productId + ' to cart');
+            
+            // Update cart count (example)
+            let cartCount = document.querySelector('.cart-count');
+            let currentCount = parseInt(cartCount.textContent);
+            cartCount.textContent = currentCount + 1;
+            
+            // Optional: Show a notification
+            alert('Product added to cart!');
+        }
+    </script>
+    
+
+    <script src="script.js"></script>
 </body>
 </html>
